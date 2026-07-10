@@ -1,0 +1,32 @@
+{
+  "name": "saludplus",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:e2e": "start-server-and-test dev http://localhost:9090 cypress:run",
+    "selenium:run": "mocha \"selenium/**/*.test.js\" --timeout 20000",
+    "test:selenium": "start-server-and-test dev http://localhost:9090 selenium:run"
+  },
+  "dependencies": {
+    "pinia": "^3.0.4",
+    "vue": "^3.5.39",
+    "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "cypress": "^15.18.1",
+    "mocha": "^11.7.6",
+    "prettier": "^3.9.5",
+    "selenium-webdriver": "^4.45.0",
+    "start-server-and-test": "^3.0.11",
+    "tailwindcss": "^4.3.2",
+    "vite": "^8.1.1"
+  }
+}
