@@ -1,0 +1,271 @@
+{
+  "id": "613f5c77-669f-4550-a56e-082d74174d47",
+  "version": "2.0",
+  "name": "Login de paciente",
+  "url": "http://localhost:9090",
+  "tests": [
+    {
+      "id": "5ab74681-4aac-4580-a1a0-71cbcca1c5eb",
+      "name": "inicia sesión con un correo registrado y va a mis citas",
+      "commands": [
+        {
+          "id": "7c594623-eeda-4a3d-87e1-920e9db1a5de",
+          "comment": "localStorage es por origen: hay que visitar el sitio antes de poder limpiarlo.",
+          "command": "open",
+          "target": "/",
+          "targets": [
+            [
+              "/",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "a7cf263e-3bee-4541-9d32-bebf15fb18cd",
+          "comment": "",
+          "command": "executeScript",
+          "target": "window.localStorage.clear()",
+          "targets": [
+            [
+              "window.localStorage.clear()",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "56fd80bd-42b3-4892-8f03-0d6d2ba27304",
+          "comment": "",
+          "command": "open",
+          "target": "/paciente/login",
+          "targets": [
+            [
+              "/paciente/login",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "ed51bc6a-1278-48aa-92b1-eeae22d6e247",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[type=\"email\"]",
+          "targets": [
+            [
+              "css=input[type=\"email\"]",
+              "css"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "b4a55ad6-985a-4d42-a9e0-14beee80efcd",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[type=\"email\"]",
+          "targets": [
+            [
+              "css=input[type=\"email\"]",
+              "css"
+            ]
+          ],
+          "value": "carmen.vilca@gmail.com"
+        },
+        {
+          "id": "861abbd0-79a8-4799-bdaa-5db4c063bf84",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Ingresar')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Ingresar')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "d4dbf549-deb5-458f-ada4-d54e8bfcfe22",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//h1[contains(.,'Mis Citas')]",
+          "targets": [
+            [
+              "xpath=//h1[contains(.,'Mis Citas')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "93809d13-7265-44f1-85c7-dd4dc0746e00",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return window.location.pathname",
+          "targets": [
+            [
+              "return window.location.pathname",
+              ""
+            ]
+          ],
+          "value": "path"
+        },
+        {
+          "id": "ed800f9b-09b7-4193-9411-10543d391919",
+          "comment": "",
+          "command": "assert",
+          "target": "path",
+          "targets": [
+            [
+              "path",
+              ""
+            ]
+          ],
+          "value": "/paciente/citas"
+        }
+      ]
+    },
+    {
+      "id": "7752fedf-0ebf-4934-87ad-e26c22297f0d",
+      "name": "muestra error cuando el correo no existe",
+      "commands": [
+        {
+          "id": "2c211ec8-348c-4412-a336-04d95e7f89b0",
+          "comment": "localStorage es por origen: hay que visitar el sitio antes de poder limpiarlo.",
+          "command": "open",
+          "target": "/",
+          "targets": [
+            [
+              "/",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "df56282b-eded-4ce2-bd71-8a42df64bd22",
+          "comment": "",
+          "command": "executeScript",
+          "target": "window.localStorage.clear()",
+          "targets": [
+            [
+              "window.localStorage.clear()",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "165c4a27-0716-4b96-b33b-be597c3cb72e",
+          "comment": "",
+          "command": "open",
+          "target": "/paciente/login",
+          "targets": [
+            [
+              "/paciente/login",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "fa07aba1-63fd-42f4-b0cb-998f53e6d130",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[type=\"email\"]",
+          "targets": [
+            [
+              "css=input[type=\"email\"]",
+              "css"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "08098c08-1d6d-4903-8c36-51fea969bafd",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[type=\"email\"]",
+          "targets": [
+            [
+              "css=input[type=\"email\"]",
+              "css"
+            ]
+          ],
+          "value": "no.existe@example.com"
+        },
+        {
+          "id": "c45ff48b-2e6b-4a6a-a327-42a5803dad6e",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Ingresar')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Ingresar')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "582e283c-97df-4ed6-ad48-1cb10c7c87bd",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//*[contains(text(), 'No encontramos una cuenta con ese correo.')]",
+          "targets": [
+            [
+              "xpath=//*[contains(text(), 'No encontramos una cuenta con ese correo.')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "019483a6-7431-4153-b600-e4b5cb5fcd35",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return window.location.pathname",
+          "targets": [
+            [
+              "return window.location.pathname",
+              ""
+            ]
+          ],
+          "value": "path"
+        },
+        {
+          "id": "f1d97e1e-7bde-4c81-9ae3-70f2cc38c8ba",
+          "comment": "",
+          "command": "assert",
+          "target": "path",
+          "targets": [
+            [
+              "path",
+              ""
+            ]
+          ],
+          "value": "/paciente/login"
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "8d1c2dda-e362-4184-bb29-248d58b8f94c",
+      "name": "Login de paciente",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "5ab74681-4aac-4580-a1a0-71cbcca1c5eb",
+        "7752fedf-0ebf-4934-87ad-e26c22297f0d"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost:9090"
+  ],
+  "plugins": []
+}

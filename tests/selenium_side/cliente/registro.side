@@ -1,0 +1,427 @@
+{
+  "id": "213ab5bd-dd9c-4391-b9ff-6915319f49a9",
+  "version": "2.0",
+  "name": "Registro de paciente (RF01)",
+  "url": "http://localhost:9090",
+  "tests": [
+    {
+      "id": "12731f79-ec37-40f4-8b35-4f396872cc25",
+      "name": "registra un paciente nuevo y lo lleva a su panel de citas",
+      "commands": [
+        {
+          "id": "2956c86f-a314-4f13-a9cd-3bdf93decfca",
+          "comment": "localStorage es por origen: hay que visitar el sitio antes de poder limpiarlo.",
+          "command": "open",
+          "target": "/",
+          "targets": [
+            [
+              "/",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "1d9a531d-b168-4e32-8d95-d97b6a280185",
+          "comment": "",
+          "command": "executeScript",
+          "target": "window.localStorage.clear()",
+          "targets": [
+            [
+              "window.localStorage.clear()",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "394dbf8d-7a59-4616-bb8a-d8ecaf25aa96",
+          "comment": "",
+          "command": "open",
+          "target": "/paciente/registro",
+          "targets": [
+            [
+              "/paciente/registro",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "ad6e73a9-0254-4b87-8458-b3349eb34c12",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[placeholder=\"Ej. María\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"Ej. María\"]",
+              "css"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "9000e17e-c65b-41b4-a566-afadb883a296",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"Ej. María\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"Ej. María\"]",
+              "css"
+            ]
+          ],
+          "value": "Diana"
+        },
+        {
+          "id": "c9dfba1d-280d-4c00-b575-1a533109c972",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"Ej. Salas Mendoza\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"Ej. Salas Mendoza\"]",
+              "css"
+            ]
+          ],
+          "value": "Reyes Ortiz"
+        },
+        {
+          "id": "9195cad1-723b-4937-8d7c-9e6111be3ed3",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"12345678\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"12345678\"]",
+              "css"
+            ]
+          ],
+          "value": "72345678"
+        },
+        {
+          "id": "393f735b-adab-4def-ae62-969c18f50966",
+          "comment": "ChromeDriver espera el input[type=date] en formato MM/DD/YYYY, no YYYY-MM-DD.",
+          "command": "type",
+          "target": "css=input[type=\"date\"]",
+          "targets": [
+            [
+              "css=input[type=\"date\"]",
+              "css"
+            ]
+          ],
+          "value": "04/12/1998"
+        },
+        {
+          "id": "9342afd1-961b-45fa-bd27-65d24e7b775f",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"tucorreo@ejemplo.com\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"tucorreo@ejemplo.com\"]",
+              "css"
+            ]
+          ],
+          "value": "diana.reyes@example.com"
+        },
+        {
+          "id": "99191c26-ceb0-4f5f-9b93-d5ef8bb9ef98",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"9XXXXXXXX\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"9XXXXXXXX\"]",
+              "css"
+            ]
+          ],
+          "value": "911222333"
+        },
+        {
+          "id": "66e808e5-3a09-4939-ac77-965e9e76f16b",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"••••••••\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"••••••••\"]",
+              "css"
+            ]
+          ],
+          "value": "claveSegura123"
+        },
+        {
+          "id": "01f49742-8d67-425b-97ab-8401b834fc6c",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Crear cuenta')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Crear cuenta')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "f14c6c12-cffc-475e-a73d-d176eb46de4f",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//h1[contains(.,'Mis Citas')]",
+          "targets": [
+            [
+              "xpath=//h1[contains(.,'Mis Citas')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "69e0b6ef-29ec-446f-94c1-062c73adf228",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return window.location.pathname",
+          "targets": [
+            [
+              "return window.location.pathname",
+              ""
+            ]
+          ],
+          "value": "path"
+        },
+        {
+          "id": "07f7907d-6022-4fb8-af9d-81bc2f0a11c6",
+          "comment": "",
+          "command": "assert",
+          "target": "path",
+          "targets": [
+            [
+              "path",
+              ""
+            ]
+          ],
+          "value": "/paciente/citas"
+        }
+      ]
+    },
+    {
+      "id": "6259e88b-1040-464f-a817-97c02491ade8",
+      "name": "rechaza un registro con documento o correo duplicado",
+      "commands": [
+        {
+          "id": "777f45e5-b96c-44e1-89f6-6169c472caf1",
+          "comment": "localStorage es por origen: hay que visitar el sitio antes de poder limpiarlo.",
+          "command": "open",
+          "target": "/",
+          "targets": [
+            [
+              "/",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "79f76c95-bf32-486d-9483-a2bd6b67467e",
+          "comment": "",
+          "command": "executeScript",
+          "target": "window.localStorage.clear()",
+          "targets": [
+            [
+              "window.localStorage.clear()",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "74379fe4-a4a8-49fd-9886-c469579e7d81",
+          "comment": "",
+          "command": "open",
+          "target": "/paciente/registro",
+          "targets": [
+            [
+              "/paciente/registro",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "42862b70-5c1d-499b-b0f2-47ef3f97a66d",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[placeholder=\"Ej. María\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"Ej. María\"]",
+              "css"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "29227965-71ac-4beb-846a-6e83fc00f269",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"Ej. María\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"Ej. María\"]",
+              "css"
+            ]
+          ],
+          "value": "Carmen"
+        },
+        {
+          "id": "346ed0ef-269e-4b50-bc8e-4b724e85ff5a",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"Ej. Salas Mendoza\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"Ej. Salas Mendoza\"]",
+              "css"
+            ]
+          ],
+          "value": "Vilca Apaza"
+        },
+        {
+          "id": "2c2a603a-6508-44af-a42e-df4f1871d511",
+          "comment": "documento ya sembrado",
+          "command": "type",
+          "target": "css=input[placeholder=\"12345678\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"12345678\"]",
+              "css"
+            ]
+          ],
+          "value": "49456789"
+        },
+        {
+          "id": "0f98a624-dd62-40a5-93f7-21ca0588c358",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[type=\"date\"]",
+          "targets": [
+            [
+              "css=input[type=\"date\"]",
+              "css"
+            ]
+          ],
+          "value": "01/30/1995"
+        },
+        {
+          "id": "6bfbe0d3-01ed-4040-9c29-72f9d22c614e",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"tucorreo@ejemplo.com\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"tucorreo@ejemplo.com\"]",
+              "css"
+            ]
+          ],
+          "value": "otro.correo@example.com"
+        },
+        {
+          "id": "1dda7f78-020a-416c-825d-29f86ce01bfa",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"9XXXXXXXX\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"9XXXXXXXX\"]",
+              "css"
+            ]
+          ],
+          "value": "954321098"
+        },
+        {
+          "id": "0405767e-4243-47cc-bdbb-399081080ee5",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"••••••••\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"••••••••\"]",
+              "css"
+            ]
+          ],
+          "value": "claveSegura123"
+        },
+        {
+          "id": "3f114b0c-ec07-445f-bec8-6efa9e7209e8",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Crear cuenta')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Crear cuenta')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "9c8d2e00-c746-417f-9434-5f16b91ee04c",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//*[contains(text(), 'Ya existe una cuenta registrada')]",
+          "targets": [
+            [
+              "xpath=//*[contains(text(), 'Ya existe una cuenta registrada')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "af8d3e56-db81-449a-aa3d-9a2f9dc37e3c",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return window.location.pathname",
+          "targets": [
+            [
+              "return window.location.pathname",
+              ""
+            ]
+          ],
+          "value": "path"
+        },
+        {
+          "id": "b15c2ad8-891f-4a29-a275-981ad76e66f2",
+          "comment": "",
+          "command": "assert",
+          "target": "path",
+          "targets": [
+            [
+              "path",
+              ""
+            ]
+          ],
+          "value": "/paciente/registro"
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "5b9dceaf-c83c-45bf-a06b-8b73c9f2f189",
+      "name": "Registro de paciente (RF01)",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "12731f79-ec37-40f4-8b35-4f396872cc25",
+        "6259e88b-1040-464f-a817-97c02491ade8"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost:9090"
+  ],
+  "plugins": []
+}

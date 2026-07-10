@@ -4,7 +4,6 @@ import { useReservasStore } from '../../../stores/reservas';
 import { useMedicosStore } from '../../../stores/medicos';
 import { useEspecialidadesStore } from '../../../stores/especialidades';
 import ModalIngreso from './ModalIngreso.vue';
-import ModalAtencion from './ModalAtencion.vue';
 import ModalReserva from './ModalReserva.vue';
 
 const reservas = useReservasStore();
@@ -12,7 +11,6 @@ const medicos = useMedicosStore();
 const especialidades = useEspecialidadesStore();
 
 const showIngreso = ref(false);
-const showAtencion = ref(false);
 const showReserva = ref(false);
 const reservaActiva = ref(null);
 const filtroEstado = ref('todos');
@@ -37,10 +35,6 @@ function nombreEspecialidad(id) {
 function abrirIngreso(r) {
   reservaActiva.value = { ...r };
   showIngreso.value = true;
-}
-function abrirAtencion(r) {
-  reservaActiva.value = { ...r };
-  showAtencion.value = true;
 }
 
 const AVATAR_PALETTE = [
@@ -156,13 +150,6 @@ const ESTADO_LABEL = {
                   >
                     Registrar ingreso
                   </button>
-                  <button
-                    v-if="r.estado === 'en_espera'"
-                    @click="abrirAtencion(r)"
-                    class="px-3 py-1.5 text-sm font-semibold text-blue-600 border border-blue-200 bg-white rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap"
-                  >
-                    Registrar atención
-                  </button>
                   <button @click="confirmarCancelar(r.id)" class="px-3 py-1.5 text-sm font-semibold text-red-500 border border-red-200 bg-white rounded-lg hover:bg-red-50 transition-colors whitespace-nowrap">
                     Cancelar
                   </button>
@@ -177,6 +164,5 @@ const ESTADO_LABEL = {
   </div>
 
   <ModalIngreso :show="showIngreso" :reserva="reservaActiva" @close="showIngreso = false" />
-  <ModalAtencion :show="showAtencion" :reserva="reservaActiva" @close="showAtencion = false" />
   <ModalReserva :show="showReserva" @close="showReserva = false" />
 </template>

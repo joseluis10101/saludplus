@@ -1,0 +1,381 @@
+{
+  "id": "0115f44e-c2ca-4590-afc3-692c4fa28176",
+  "version": "2.0",
+  "name": "Reservar cita (RF02)",
+  "url": "http://localhost:9090",
+  "tests": [
+    {
+      "id": "e9d00daa-e55c-4d23-85fb-3f2d35a45341",
+      "name": "Preparar sesión y nueva cita (setup)",
+      "commands": [
+        {
+          "id": "ebd903f8-1c37-406a-87bb-6c268e366d46",
+          "comment": "localStorage es por origen: hay que visitar el sitio antes de poder limpiarlo.",
+          "command": "open",
+          "target": "/",
+          "targets": [
+            [
+              "/",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "855d2729-6b21-41c5-bfea-b15f7d200f54",
+          "comment": "",
+          "command": "executeScript",
+          "target": "window.localStorage.clear()",
+          "targets": [
+            [
+              "window.localStorage.clear()",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "c7d850b3-47f4-40d4-bd2b-35429525432f",
+          "comment": "",
+          "command": "open",
+          "target": "/paciente/login",
+          "targets": [
+            [
+              "/paciente/login",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "35ce8a77-8d5d-40ef-9521-5420a946e6bd",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[type=\"email\"]",
+          "targets": [
+            [
+              "css=input[type=\"email\"]",
+              "css"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "cc8825bd-54e4-47e7-874e-595cf11afb42",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[type=\"email\"]",
+          "targets": [
+            [
+              "css=input[type=\"email\"]",
+              "css"
+            ]
+          ],
+          "value": "carmen.vilca@gmail.com"
+        },
+        {
+          "id": "fce98058-0be0-4f16-b37d-270a5be19d9b",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Ingresar')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Ingresar')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "214c29d8-2ccd-46da-9712-4a1c2e90d1d7",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//h1[contains(.,'Mis Citas')]",
+          "targets": [
+            [
+              "xpath=//h1[contains(.,'Mis Citas')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "bdacef79-d5b4-4783-bb00-a26269ad8ff5",
+          "comment": "",
+          "command": "open",
+          "target": "/paciente/nueva-cita",
+          "targets": [
+            [
+              "/paciente/nueva-cita",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "386035a9-8cb9-407d-a204-af0c5a1c4f51",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//button[contains(., 'Cardiología')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Cardiología')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        }
+      ]
+    },
+    {
+      "id": "97f06b7d-65fb-4f12-bb9a-6d145b9b23f6",
+      "name": "reserva una cita eligiendo especialidad, médico, fecha y hora",
+      "commands": [
+        {
+          "id": "72626f7a-3f84-4a4b-aad5-016e08a502ce",
+          "comment": "",
+          "command": "run",
+          "target": "Preparar sesión y nueva cita (setup)",
+          "targets": [
+            [
+              "Preparar sesión y nueva cita (setup)",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "82d53586-70cd-4b19-b0e2-3f10e2192b92",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Cardiología')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Cardiología')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "c996ecf7-ce72-4e26-96de-ae7721231c6f",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Dr(a). Carlos Paredes Vega')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Dr(a). Carlos Paredes Vega')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "0e7ea8e6-242c-4190-a2a4-ba7c4a38afa8",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const d = new Date(); d.setDate(d.getDate() + 7); const iso = d.toISOString().slice(0, 10); const [y, m, day] = iso.split('-'); return `${m}/${day}/${y}`;",
+          "targets": [
+            [
+              "const d = new Date(); d.setDate(d.getDate() + 7); const iso = d.toISOString().slice(0, 10); const [y, m, day] = iso.split('-'); return `${m}/${day}/${y}`;",
+              "const d "
+            ]
+          ],
+          "value": "fechaChrome"
+        },
+        {
+          "id": "10d1c23c-17b4-4e42-9537-0abb5b071b5a",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[type=\"date\"]",
+          "targets": [
+            [
+              "css=input[type=\"date\"]",
+              "css"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "25473c47-abdb-4f26-bbb3-fcfc9251279a",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[type=\"date\"]",
+          "targets": [
+            [
+              "css=input[type=\"date\"]",
+              "css"
+            ]
+          ],
+          "value": "${fechaChrome}"
+        },
+        {
+          "id": "de7563fb-8356-4475-8026-49edc0153391",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., '09:00')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., '09:00')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "2103190a-054e-4656-95a5-3073aa4e687c",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Confirmar cita')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Confirmar cita')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "3a5a1f0b-5233-454b-b51f-566933fed282",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//h1[contains(.,'Mis Citas')]",
+          "targets": [
+            [
+              "xpath=//h1[contains(.,'Mis Citas')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "a4582553-ea69-444f-a702-e65c0d103514",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return window.location.pathname",
+          "targets": [
+            [
+              "return window.location.pathname",
+              ""
+            ]
+          ],
+          "value": "path"
+        },
+        {
+          "id": "2a858693-4789-4c64-9032-570bbc96b915",
+          "comment": "",
+          "command": "assert",
+          "target": "path",
+          "targets": [
+            [
+              "path",
+              ""
+            ]
+          ],
+          "value": "/paciente/citas"
+        },
+        {
+          "id": "962a0c68-31ac-41bc-9a50-5e0543a3664d",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//*[contains(text(), 'Cardiología')]",
+          "targets": [
+            [
+              "xpath=//*[contains(text(), 'Cardiología')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "2a62a01e-7e60-442c-83c1-0c9d9e036b34",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//*[contains(text(), 'Cardiología')]",
+          "targets": [
+            [
+              "xpath=//*[contains(text(), 'Cardiología')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "5f787362-f786-411a-9e23-91ebf7e4dcba",
+      "name": "no muestra especialidades inactivas (RF08)",
+      "commands": [
+        {
+          "id": "d10eafa6-b468-4cb6-bb99-43762bcd4dc7",
+          "comment": "",
+          "command": "run",
+          "target": "Preparar sesión y nueva cita (setup)",
+          "targets": [
+            [
+              "Preparar sesión y nueva cita (setup)",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "097a39b8-5303-48ed-b53a-2bb4c885eeb6",
+          "comment": "Traumatología está sembrada como inactiva y no debe aparecer en el módulo de reserva",
+          "command": "assertElementNotPresent",
+          "target": "xpath=//button[contains(., 'Traumatología')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Traumatología')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "74973da3-c27d-42a1-8b2c-9cad193afa84",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//button[contains(., 'Cardiología')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Cardiología')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "157c4e78-671c-4ab3-8704-26a6e52ca8f7",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//button[contains(., 'Cardiología')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Cardiología')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "988d33f9-7e68-456a-9e22-c3f9509f21fa",
+      "name": "Reservar cita (RF02)",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "97f06b7d-65fb-4f12-bb9a-6d145b9b23f6",
+        "5f787362-f786-411a-9e23-91ebf7e4dcba"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost:9090"
+  ],
+  "plugins": []
+}
