@@ -1,0 +1,238 @@
+{
+  "id": "b1ccb45d-e8b4-4f29-8d2e-22f0684d3a7a",
+  "version": "2.0",
+  "name": "Crear paciente desde admin (RF08-like)",
+  "url": "http://localhost:9090",
+  "tests": [
+    {
+      "id": "d24a91be-e35f-4afc-b5e1-25175f7dfcf5",
+      "name": "Crear paciente desde admin (RF08-like)",
+      "commands": [
+        {
+          "id": "bf25f317-21d8-4b84-a977-3b0d7aa14453",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [
+            [
+              "/",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "4fdf7918-75af-44c4-b6f7-1d9dc7fb661f",
+          "comment": "",
+          "command": "executeScript",
+          "target": "window.localStorage.clear()",
+          "targets": [
+            [
+              "window.localStorage.clear()",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "a0b7bf58-0913-483e-8003-25feee33fcfd",
+          "comment": "",
+          "command": "open",
+          "target": "/admin/pacientes",
+          "targets": [
+            [
+              "/admin/pacientes",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "65c478cb-d13b-4713-9e95-3270364cb9e7",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//h1[contains(.,'Pacientes')]",
+          "targets": [
+            [
+              "xpath=//h1[contains(.,'Pacientes')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "4abb65c1-1fd4-4e34-ba19-8f69bbbc4209",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Nuevo paciente')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Nuevo paciente')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "477a2257-f2e0-4d58-a206-9bff77a83754",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[placeholder=\"Ej. María\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"Ej. María\"]",
+              "css"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "0303eb69-aa30-4fdd-bf45-f4da47edf68b",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"Ej. María\\\"]\"); el.value = \"Sofía\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"Ej. María\\\"]\"); el.value = \"Sofía\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "8113ec7f-0db5-4d85-a5bd-39598e6b1289",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"Ej. Salas Mendoza\\\"]\"); el.value = \"Ramírez Díaz\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"Ej. Salas Mendoza\\\"]\"); el.value = \"Ramírez Díaz\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "207753e7-1b8c-49dc-992d-bd5cc82ebc05",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"12345678\\\"]\"); el.value = \"50123456\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"12345678\\\"]\"); el.value = \"50123456\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "b742b599-cfbe-42c7-acfb-beb39423694b",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[type=\\\"date\\\"]\"); el.value = \"2000-06-15\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[type=\\\"date\\\"]\"); el.value = \"2000-06-15\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "f2b8c939-3a0f-47c4-876b-2361d56111ce",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"paciente@correo.com\\\"]\"); el.value = \"sofia.ramirez@example.com\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"paciente@correo.com\\\"]\"); el.value = \"sofia.ramirez@example.com\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "e7d79f59-452f-44ef-8d5d-09e0c9dd9f41",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"9XXXXXXXX\\\"]\"); el.value = \"922333444\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"9XXXXXXXX\\\"]\"); el.value = \"922333444\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "919e0b7c-e338-464f-9b36-ef4039b7b45b",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Crear paciente')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Crear paciente')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "ce9050bd-33e0-407e-93aa-8dbc3b0abead",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//tr[contains(.,'Ramírez Díaz')]",
+          "targets": [
+            [
+              "xpath=//tr[contains(.,'Ramírez Díaz')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "be5c52bd-c4a3-4d82-97c6-7ac67e12ef7f",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//*[contains(text(), '7 pacientes registrados')]",
+          "targets": [
+            [
+              "xpath=//*[contains(text(), '7 pacientes registrados')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "5bb8e1f9-25de-43c2-bc0a-e17063d2b1b0",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//tr[contains(.,'Sofía') and contains(.,'Ramírez Díaz')]",
+          "targets": [
+            [
+              "xpath=//tr[contains(.,'Sofía') and contains(.,'Ramírez Díaz')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "35cbbd34-f693-4e44-a091-9dfc61ab1fa1",
+      "name": "Crear paciente desde admin (RF08-like)",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "d24a91be-e35f-4afc-b5e1-25175f7dfcf5"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost:9090"
+  ],
+  "plugins": []
+}

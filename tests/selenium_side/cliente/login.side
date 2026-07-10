@@ -1,15 +1,15 @@
 {
-  "id": "613f5c77-669f-4550-a56e-082d74174d47",
+  "id": "4bc9561d-08ec-4380-aef1-b5dcb8c6efcb",
   "version": "2.0",
   "name": "Login de paciente",
   "url": "http://localhost:9090",
   "tests": [
     {
-      "id": "5ab74681-4aac-4580-a1a0-71cbcca1c5eb",
+      "id": "faefa717-e26e-4499-bad2-c31e3fd9d4b5",
       "name": "inicia sesión con un correo registrado y va a mis citas",
       "commands": [
         {
-          "id": "7c594623-eeda-4a3d-87e1-920e9db1a5de",
+          "id": "f68bdb34-4f75-4c3f-a9f0-7fdeb07bc08a",
           "comment": "localStorage es por origen: hay que visitar el sitio antes de poder limpiarlo.",
           "command": "open",
           "target": "/",
@@ -22,7 +22,7 @@
           "value": ""
         },
         {
-          "id": "a7cf263e-3bee-4541-9d32-bebf15fb18cd",
+          "id": "14d051a2-9b30-47a3-82cc-6eca5cbe2e8f",
           "comment": "",
           "command": "executeScript",
           "target": "window.localStorage.clear()",
@@ -35,7 +35,7 @@
           "value": ""
         },
         {
-          "id": "56fd80bd-42b3-4892-8f03-0d6d2ba27304",
+          "id": "1b27e2c8-31a0-4b32-b477-8ff2ab5695c1",
           "comment": "",
           "command": "open",
           "target": "/paciente/login",
@@ -48,7 +48,7 @@
           "value": ""
         },
         {
-          "id": "ed51bc6a-1278-48aa-92b1-eeae22d6e247",
+          "id": "1832dbbb-09af-46e5-8326-20c1c96e2d50",
           "comment": "",
           "command": "waitForElementVisible",
           "target": "css=input[type=\"email\"]",
@@ -61,20 +61,20 @@
           "value": "10000"
         },
         {
-          "id": "b4a55ad6-985a-4d42-a9e0-14beee80efcd",
+          "id": "60a146bb-e43b-4a25-8fbb-5132c715dd5f",
           "comment": "",
-          "command": "type",
-          "target": "css=input[type=\"email\"]",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[type=\\\"email\\\"]\"); el.value = \"carmen.vilca@gmail.com\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
           "targets": [
             [
-              "css=input[type=\"email\"]",
-              "css"
+              "const el = document.querySelector(\"input[type=\\\"email\\\"]\"); el.value = \"carmen.vilca@gmail.com\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
             ]
           ],
-          "value": "carmen.vilca@gmail.com"
+          "value": ""
         },
         {
-          "id": "861abbd0-79a8-4799-bdaa-5db4c063bf84",
+          "id": "9e85daf4-f042-4343-b6f5-865004b80f3d",
           "comment": "",
           "command": "click",
           "target": "xpath=//button[contains(., 'Ingresar')]",
@@ -87,7 +87,7 @@
           "value": ""
         },
         {
-          "id": "d4dbf549-deb5-458f-ada4-d54e8bfcfe22",
+          "id": "5d7e897a-f1f5-4cf8-b12b-32b621a357ae",
           "comment": "",
           "command": "waitForElementVisible",
           "target": "xpath=//h1[contains(.,'Mis Citas')]",
@@ -100,7 +100,7 @@
           "value": "10000"
         },
         {
-          "id": "93809d13-7265-44f1-85c7-dd4dc0746e00",
+          "id": "94d7bb4c-47d2-472d-8a2e-9f3cc7860db9",
           "comment": "",
           "command": "executeScript",
           "target": "return window.location.pathname",
@@ -113,7 +113,7 @@
           "value": "path"
         },
         {
-          "id": "ed800f9b-09b7-4193-9411-10543d391919",
+          "id": "177b12f3-5b5f-4263-b691-0cfa000125a4",
           "comment": "",
           "command": "assert",
           "target": "path",
@@ -128,11 +128,11 @@
       ]
     },
     {
-      "id": "7752fedf-0ebf-4934-87ad-e26c22297f0d",
+      "id": "b44aed6e-1c16-495e-9534-d462131dbdb8",
       "name": "muestra error cuando el correo no existe",
       "commands": [
         {
-          "id": "2c211ec8-348c-4412-a336-04d95e7f89b0",
+          "id": "01d592d9-7ff3-4096-9800-5cb3e091d6f3",
           "comment": "localStorage es por origen: hay que visitar el sitio antes de poder limpiarlo.",
           "command": "open",
           "target": "/",
@@ -145,7 +145,7 @@
           "value": ""
         },
         {
-          "id": "df56282b-eded-4ce2-bd71-8a42df64bd22",
+          "id": "06fa59b6-d472-4631-b25f-bc95a8f33a72",
           "comment": "",
           "command": "executeScript",
           "target": "window.localStorage.clear()",
@@ -158,7 +158,7 @@
           "value": ""
         },
         {
-          "id": "165c4a27-0716-4b96-b33b-be597c3cb72e",
+          "id": "b2fd5501-6184-4745-9d4b-44c9b33144f4",
           "comment": "",
           "command": "open",
           "target": "/paciente/login",
@@ -171,7 +171,7 @@
           "value": ""
         },
         {
-          "id": "fa07aba1-63fd-42f4-b0cb-998f53e6d130",
+          "id": "74403281-6ca6-492f-b4d0-a3f4866ffe6e",
           "comment": "",
           "command": "waitForElementVisible",
           "target": "css=input[type=\"email\"]",
@@ -184,20 +184,20 @@
           "value": "10000"
         },
         {
-          "id": "08098c08-1d6d-4903-8c36-51fea969bafd",
+          "id": "aa1f6bad-1023-4250-8952-c7554e9f2cc4",
           "comment": "",
-          "command": "type",
-          "target": "css=input[type=\"email\"]",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[type=\\\"email\\\"]\"); el.value = \"no.existe@example.com\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
           "targets": [
             [
-              "css=input[type=\"email\"]",
-              "css"
+              "const el = document.querySelector(\"input[type=\\\"email\\\"]\"); el.value = \"no.existe@example.com\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
             ]
           ],
-          "value": "no.existe@example.com"
+          "value": ""
         },
         {
-          "id": "c45ff48b-2e6b-4a6a-a327-42a5803dad6e",
+          "id": "585f4db5-a40c-4f0f-b41e-bbeeefc8f82f",
           "comment": "",
           "command": "click",
           "target": "xpath=//button[contains(., 'Ingresar')]",
@@ -210,7 +210,7 @@
           "value": ""
         },
         {
-          "id": "582e283c-97df-4ed6-ad48-1cb10c7c87bd",
+          "id": "401086c4-8f6a-4e35-96fe-4769e8a5f537",
           "comment": "",
           "command": "waitForElementVisible",
           "target": "xpath=//*[contains(text(), 'No encontramos una cuenta con ese correo.')]",
@@ -223,7 +223,7 @@
           "value": "10000"
         },
         {
-          "id": "019483a6-7431-4153-b600-e4b5cb5fcd35",
+          "id": "cdff6472-09e0-4870-b07b-d78065658540",
           "comment": "",
           "command": "executeScript",
           "target": "return window.location.pathname",
@@ -236,7 +236,7 @@
           "value": "path"
         },
         {
-          "id": "f1d97e1e-7bde-4c81-9ae3-70f2cc38c8ba",
+          "id": "95f2fbb5-f5bc-4fd0-93c4-b1f6cbf9a246",
           "comment": "",
           "command": "assert",
           "target": "path",
@@ -253,14 +253,14 @@
   ],
   "suites": [
     {
-      "id": "8d1c2dda-e362-4184-bb29-248d58b8f94c",
+      "id": "eaa5e403-9059-44c2-9e29-1b3d8713eb30",
       "name": "Login de paciente",
       "persistSession": false,
       "parallel": false,
       "timeout": 300,
       "tests": [
-        "5ab74681-4aac-4580-a1a0-71cbcca1c5eb",
-        "7752fedf-0ebf-4934-87ad-e26c22297f0d"
+        "faefa717-e26e-4499-bad2-c31e3fd9d4b5",
+        "b44aed6e-1c16-495e-9534-d462131dbdb8"
       ]
     }
   ],

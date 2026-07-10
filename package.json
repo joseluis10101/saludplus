@@ -10,8 +10,10 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "test:e2e": "start-server-and-test dev http://localhost:9090 cypress:run",
-    "selenium:run": "mocha \"selenium/**/*.test.js\" --timeout 20000",
-    "test:selenium": "start-server-and-test dev http://localhost:9090 selenium:run"
+    "selenium:run": "mocha \"tests/selenium/**/*.test.js\" --timeout 20000",
+    "test:selenium": "start-server-and-test dev http://localhost:9090 selenium:run",
+    "selenium:side": "node tests/selenium_side/run-side.mjs tests/selenium_side",
+    "test:selenium-side": "start-server-and-test dev http://localhost:9090 selenium:side"
   },
   "dependencies": {
     "pinia": "^3.0.4",
@@ -19,7 +21,6 @@
     "vue-router": "^5.1.0"
   },
   "devDependencies": {
-    "@seleniumhq/side-runner": "^4.0.0-alpha.0",
     "@tailwindcss/vite": "^4.3.2",
     "@vitejs/plugin-vue": "^6.0.7",
     "cypress": "^15.18.1",

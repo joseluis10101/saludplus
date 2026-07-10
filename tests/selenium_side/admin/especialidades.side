@@ -1,0 +1,186 @@
+{
+  "id": "ce246ffe-0bc2-41bd-997b-234482f5cea6",
+  "version": "2.0",
+  "name": "Crear especialidad (RF08)",
+  "url": "http://localhost:9090",
+  "tests": [
+    {
+      "id": "6aa9141c-33a3-436c-9f42-e9c897473281",
+      "name": "Crear especialidad (RF08)",
+      "commands": [
+        {
+          "id": "1cddc0ae-4e66-447c-93a4-becefea16c67",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [
+            [
+              "/",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "142d726c-6c58-4483-a2ea-d9b6bf028fd9",
+          "comment": "",
+          "command": "executeScript",
+          "target": "window.localStorage.clear()",
+          "targets": [
+            [
+              "window.localStorage.clear()",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "c6a31b82-b3c6-4341-b75b-e2aaa1df3ce7",
+          "comment": "",
+          "command": "open",
+          "target": "/admin/especialidades",
+          "targets": [
+            [
+              "/admin/especialidades",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "4d6f49c4-6d84-4f01-b26a-761b57ac52ea",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//h1[contains(.,'Especialidades')]",
+          "targets": [
+            [
+              "xpath=//h1[contains(.,'Especialidades')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "f178b315-9fd1-48e5-a83d-8b721200337d",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Nueva especialidad')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Nueva especialidad')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "ceef5cbf-9c17-40f3-9af9-83295e10e1b2",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[placeholder=\"Ej. Cardiología\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"Ej. Cardiología\"]",
+              "css"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "0f87f6e7-23b6-4756-8c0a-2d2e4700fbde",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"Ej. Cardiología\\\"]\"); el.value = \"Oncología\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"Ej. Cardiología\\\"]\"); el.value = \"Oncología\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "efad381a-1d94-4452-9b94-65816da30b96",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"textarea\"); el.value = \"Diagnóstico y tratamiento del cáncer\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"textarea\"); el.value = \"Diagnóstico y tratamiento del cáncer\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "bbe49278-fcc2-4683-88fd-6252180489cf",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Crear especialidad')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Crear especialidad')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "648eb3b6-f9b7-4048-9e48-28743a3208c4",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//tr[contains(.,'Oncología')]",
+          "targets": [
+            [
+              "xpath=//tr[contains(.,'Oncología')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "f515e19a-8149-4d05-a273-7f9a200ad4b4",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//tr[contains(.,'Oncología') and contains(.,'Diagnóstico y tratamiento del cáncer')]",
+          "targets": [
+            [
+              "xpath=//tr[contains(.,'Oncología') and contains(.,'Diagnóstico y tratamiento del cáncer')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "833d9f3c-158e-4b31-b14e-be829d639973",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//tr[contains(.,'Oncología') and contains(.,'activo')]",
+          "targets": [
+            [
+              "xpath=//tr[contains(.,'Oncología') and contains(.,'activo')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "72fa2215-d557-41a8-882a-7636d139b9c9",
+      "name": "Crear especialidad (RF08)",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "6aa9141c-33a3-436c-9f42-e9c897473281"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost:9090"
+  ],
+  "plugins": []
+}

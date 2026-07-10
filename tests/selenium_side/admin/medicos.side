@@ -1,0 +1,238 @@
+{
+  "id": "5aba5031-ef45-4c3c-9dba-93e16da9e0ca",
+  "version": "2.0",
+  "name": "Crear médico (RF08)",
+  "url": "http://localhost:9090",
+  "tests": [
+    {
+      "id": "d0a6f394-4336-42c4-8a2d-f87608af2325",
+      "name": "Crear médico (RF08)",
+      "commands": [
+        {
+          "id": "0c38264d-b00f-48c6-8d80-243f9cfee8d9",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [
+            [
+              "/",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "b47f537e-18c3-4fc9-aa1c-d7f1c30d34eb",
+          "comment": "",
+          "command": "executeScript",
+          "target": "window.localStorage.clear()",
+          "targets": [
+            [
+              "window.localStorage.clear()",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "79eccc9d-7376-4221-b007-d0ba81c1f04d",
+          "comment": "",
+          "command": "open",
+          "target": "/admin/medicos",
+          "targets": [
+            [
+              "/admin/medicos",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "018416be-13da-48db-a232-760f35526ec4",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//h1[contains(.,'Médicos')]",
+          "targets": [
+            [
+              "xpath=//h1[contains(.,'Médicos')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "0754bee8-a2df-44e0-afb8-02d483c7c713",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Nuevo médico')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Nuevo médico')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "f57a0fc9-cafa-4be7-b858-5f4459302bfb",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[placeholder=\"Ej. Carlos\"]",
+          "targets": [
+            [
+              "css=input[placeholder=\"Ej. Carlos\"]",
+              "css"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "f57b5daa-a4b0-4cad-8ee4-63d5d429c0c9",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"Ej. Carlos\\\"]\"); el.value = \"Luis\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"Ej. Carlos\\\"]\"); el.value = \"Luis\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "ee0ae4c0-7d25-4b33-a35a-94754e6af0e9",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"Ej. Paredes Vega\\\"]\"); el.value = \"Fernández Soto\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"Ej. Paredes Vega\\\"]\"); el.value = \"Fernández Soto\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "54abb623-778d-48e1-8289-caeb487f3eb9",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"DNI / CMP\\\"]\"); el.value = \"55667788\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"DNI / CMP\\\"]\"); el.value = \"55667788\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "977aa0d2-6e3a-4bdf-8ef4-f86dbdd7d39a",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const sel = document.querySelector(\"select\"); const opt = Array.from(sel.options).find((o) => o.textContent.trim() === \"Cardiología\"); opt.selected = true; sel.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const sel = document.querySelector(\"select\"); const opt = Array.from(sel.options).find((o) => o.textContent.trim() === \"Cardiología\"); opt.selected = true; sel.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "80499801-5a99-4d2e-9012-af3c5fc350e3",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"9XXXXXXXX\\\"]\"); el.value = \"944555666\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"9XXXXXXXX\\\"]\"); el.value = \"944555666\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "79baafbe-442d-4443-bed9-94ff42ab11f3",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const el = document.querySelector(\"input[placeholder=\\\"medico@clinica.pe\\\"]\"); el.value = \"lfernandez@clinica.pe\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+          "targets": [
+            [
+              "const el = document.querySelector(\"input[placeholder=\\\"medico@clinica.pe\\\"]\"); el.value = \"lfernandez@clinica.pe\"; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true }));",
+              ""
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "90cf8a49-e07b-4f27-b747-6765b77cd122",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(., 'Crear médico')]",
+          "targets": [
+            [
+              "xpath=//button[contains(., 'Crear médico')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "fdd8ce3c-9b9a-4c1e-a8d5-4cbc89e70fed",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//tr[contains(.,'Fernández Soto')]",
+          "targets": [
+            [
+              "xpath=//tr[contains(.,'Fernández Soto')]",
+              "xpath"
+            ]
+          ],
+          "value": "10000"
+        },
+        {
+          "id": "7770532d-d523-4bdf-9b63-f4367820d0b8",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//tr[contains(.,'Luis') and contains(.,'Fernández Soto') and contains(.,'Cardiología')]",
+          "targets": [
+            [
+              "xpath=//tr[contains(.,'Luis') and contains(.,'Fernández Soto') and contains(.,'Cardiología')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "10b72c18-4011-4bff-841e-b4c1ab1bf157",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//tr[contains(.,'Fernández Soto') and contains(.,'activo')]",
+          "targets": [
+            [
+              "xpath=//tr[contains(.,'Fernández Soto') and contains(.,'activo')]",
+              "xpath"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "e8d2f26f-faf1-4ddc-ac02-e6a64537eba1",
+      "name": "Crear médico (RF08)",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "d0a6f394-4336-42c4-8a2d-f87608af2325"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost:9090"
+  ],
+  "plugins": []
+}
