@@ -13,7 +13,9 @@
     "selenium:run": "mocha \"tests/selenium/**/*.test.js\" --timeout 20000",
     "test:selenium": "start-server-and-test dev http://localhost:9090 selenium:run",
     "selenium:side": "node tests/selenium_side/run-side.mjs tests/selenium_side",
-    "test:selenium-side": "start-server-and-test dev http://localhost:9090 selenium:side"
+    "test:selenium-side": "start-server-and-test dev http://localhost:9090 selenium:side",
+    "deploy": "npm run build && netlify deploy",
+    "deploy:prod": "npm run build && netlify deploy --prod"
   },
   "dependencies": {
     "pinia": "^3.0.4",
